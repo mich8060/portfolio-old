@@ -1,0 +1,38 @@
+/* Reset */
+body,html,div,blockquote,img,label,p,h1,h2,h3,h4,h5,h6,pre,ul,ol,li,dialog,dl,dt,dd,form,a,fieldset,input,th,td,header,footer,article,section,nav,menu,main,hgroup,aside{border:0;margin:0;outline:0;padding:0;}
+:focus{outline:0}a:link,a:active,a:hover,a:visited{text-decoration:none}
+
+/* Helpers */
+img{display:block;margin:0;padding:0}
+
+/* HTML5 */
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,controls{display:block}
+audio,canvas,video{display:inline-block;*display:inline;*zoom:1}
+audio:not([controls]){display:none}
+
+/* Debug */
+.debug { outline:solid 1px red; }
+.debug-background { background:rgba(255, 0, 0, 0.1) !important; }
+
+.correct,
+.correct-background {
+	div:empty, span:empty,
+	li:empty, p:empty,
+	td:empty, th:empty { padding:segment(1); background: yellow;}
+
+	*[style],
+	*[class=""],
+	*[id=""] { outline:segment(1) dotted red;}
+
+	img[alt=""] { border: segment(1) dotted red; }
+	img:not([alt]) { border: segment(1) solid red; }
+	img[title=""] {outline: segment(1) dotted fuchsia;}
+	img:not([title]) {outline: segment(1) solid fuchsia;}
+
+	a[href]:not([title]) {border: segment(1) solid red;}
+	a[title=""] {outline: segment(1) dotted red;}
+	a[href="#"] {background: lime;}
+	a[href=""] {background: fuchsia;}
+}
+
+pre.debug { background:#fff; }

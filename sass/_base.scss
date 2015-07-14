@@ -1,0 +1,90 @@
+@import 'functions';
+
+$settings: (
+	url:		"http://localhost:8888/framework/",
+	segment: 	4,
+	rhythm: 	24,
+	round: 		true,
+	unit: 		px
+);
+
+$fonts: (
+	primary:	""ProximaNova",Helvetica, Arial, Sans-Serif",
+	secondary:	""Merriweather", Georgia, Serif"
+);
+
+$colors:  (
+	featured:	#2facb2,
+	common:		#758d94,
+	success:	#addfe9,
+	warning:	#f1ebdd,
+	error:		#f1dde0,
+	white:		#FFFFFF,
+	gray:		#CCCCCC,
+	black:		#201c1c
+);
+
+$social: (
+	twitter: 	#00aced,
+	facebook: 	#3b5998,
+	googleplus: #dd4b39,
+	pinterest: 	#cb2027,
+	linkedin: 	#007bb6,
+	youtube: 	#bb0000,
+	vimeo: 		#aad450,
+	tumblr: 	#32506d,
+	instagram: 	#517fa4,
+	flickr: 	#ff0084,
+	dribbble: 	#ea4c89,
+	quora: 		#a82400,
+	foursquare: #0072b1,
+	forrst: 	#5B9A68,
+	vk: 		#45668e,
+	wordpress: 	#21759b,
+	stumbleupon:#EB4823,
+	yahoo: 		#7B0099,
+	blogger: 	#fb8f3d,
+	soundcloud: #ff3a00
+);
+
+$featured: (
+	1: tint(colors(featured), 20%),
+	2: tint(colors(featured), 40%),
+	3: tint(colors(featured), 60%),
+	4: tint(colors(featured), 80%),
+	5: darken(colors(featured), 80%)
+);
+
+$light: (
+	1: darken(colors(white), 2%),
+	2: darken(colors(white), 4%),
+	3: darken(colors(white), 6%),
+	4: darken(colors(white), 8%),
+	5: darken(colors(white), 10%)
+);
+
+$gray: (
+	1: shade(colors(gray), 90%),
+	2: shade(colors(gray), 80%),
+	3: shade(colors(gray), 70%),
+	4: shade(colors(gray), 60%),
+	5: shade(colors(gray), 50%)
+);
+
+$dark: (
+	1: lighten(colors(black), 10%),
+	2: lighten(colors(black), 20%),
+	3: lighten(colors(black), 30%),
+	4: lighten(colors(black), 40%),
+	5: lighten(colors(black), 50%)
+);
+
+$weight: (
+	thin: 100,
+	light: 200,
+	regular: 400,
+	semibold: 600,
+	bold:700,
+	black:800,
+	extrabold:900
+);

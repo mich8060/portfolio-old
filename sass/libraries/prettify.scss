@@ -1,0 +1,44 @@
+
+
+/* Prettify Component */
+
+.com { color: #93a1a1; }
+.lit { color: #195f91; }
+.pun, .opn, .clo { color: #93a1a1; }
+.fun { color: #dc322f; }
+.str, .atv { color: #dd3f19; }
+.kwd, .prettyprint .tag { color: #3a77c1; }
+.typ, .atn, .dec, .var { color: #44a22d; }
+.pln { color: #48484c; }
+
+ol.linenums {
+  margin: 0 0 0 33px; /* IE indents via margin-left */
+}
+ol.linenums li {
+  padding-left: 12px;
+  color: #bebec5;
+  line-height: 20px;
+  text-shadow: none;
+}
+
+.invert {
+	.pln{color:#e682a9}
+	.str{color:pink}
+	.kwd{color:#88cbf0}
+	.com{color:#dbc673}
+	.typ{color:pink}
+	.lit{color:#88cbf0}
+	.pun,.opn,.clo{color:#7e8998}
+	.tag{color:pink}
+	.atn{color:#8ba771}
+	.atv{color:#88cbf0}
+	.dec,.var{color:orange}
+	.fun{color:red}	
+	
+	ol.linenums{	
+		margin:0;
+		padding:8px 5px 8px 60px;
+	}
+}
+
+

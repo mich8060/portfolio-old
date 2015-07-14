@@ -1,0 +1,660 @@
+@import 'mixins';
+@import 'base';
+
+/* Fonts */
+@include font-face('entypo','Entypo',normal,normal);
+@include font-face('entypo-social','EntypoSocial', normal, normal);
+@include font-face('et-line','EtLine',normal, normal);
+@include font-face('proximanova-extrabold-webfont','ProximaNova',900, normal);
+@include font-face('proximanova-black','ProximaNova',800,normal);
+@include font-face('proximanova-bold-webfont','ProximaNova',700,normal);
+@include font-face('proximanova-semibold-webfont','ProximaNova',600,normal);
+@include font-face('proximanova-regular-webfont','ProximaNova',400,normal);
+@include font-face('proximanova-light-webfont','ProximaNova',200,normal);
+@include font-face('proximanova-thin-webfont','ProximaNova',100,normal);
+
+/* Global */
+
+* html { font-size: 100%; }
+
+html {
+	font-size:segment(4);
+	line-height:rhythm(1);
+	height:100%;
+	@include prefix("text-size-adjust",100%);
+	@include prefix("text-rendering",optimizeLegibility);
+}
+
+body {
+	font-family:fonts(primary);
+	font-size:100%;
+	line-height:rhythm(1);
+	font-weight:weight(regular);
+	padding:0;
+	margin:0;
+	word-wrap: break-word;
+	-moz-osx-font-smoothing: grayscale;
+	@include prefix("font-smoothing", "antialiased");
+	@include prefix("hyphens", "auto");
+}
+
+@include breakpoint(retina){
+	body {
+		@include prefix("font-smoothing", "antialiased");
+	}	
+}
+
+.invert {
+	color:colors(white);
+	
+	p {
+		&.large {
+			strong {
+				color:colors(white);
+			} 
+		}
+	}
+}
+
+/* Text Selections Styles */
+::-moz-selection { background:#e1ebf1; color:colors(black); }
+::selection  { background:#e1ebf1; color:colors(black); }
+img::-moz-selection { background: transparent; 	}
+img::selection { background: transparent; }
+
+
+/* Font Weight Shortcuts */
+.weight {
+	&.thin { font-weight:weight(thin); }
+	&.light { font-weight:weight(light); }
+	&.regular { font-weight:weight(regular); }
+	&.semibold { font-weight:weight(semibold); }
+	&.bold { font-weight:weight(bold); }
+	&.extrabold { font-weight:weight(extrabold); }
+	&.black { font-weight:weight(black); }
+}
+
+/* Headlines */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 { 
+	font-weight:weight(bold); 
+	letter-spacing:-1px;
+	padding:0;
+	margin:0 0 rhythm(1) 0;
+	@include prefix('transition', all 0.3s ease);
+	
+	& + p.large { padding-top:0 !important; }
+}
+
+h1, .h1 { 
+	font-size:segment(9);
+	line-height:rhythm(1.5);
+}
+
+h2, .h2 { 
+	font-size:segment(8);
+	line-height:rhythm(2);
+	text-indent:-1px;
+}
+
+h3, .h3 { 
+	font-size:segment(7);
+	line-height:rhythm(2);
+	text-indent:0px;
+}
+h4, .h4 { 
+	font-size:segment(6);
+	line-height:rhythm(1);
+	letter-spacing:0;
+	text-indent:1px;
+}
+h5, .h5 { 
+	font-size:segment(5);
+	line-height:rhythm(1);
+	letter-spacing:0;
+	text-indent:1px;
+}
+
+h6, .h6 { 
+	font-size:segment(4);
+	line-height:rhythm(1);
+	letter-spacing:0;
+	text-indent:1px;
+}
+
+.display {
+	
+	h1,h2,h3,h4,h5,h6,
+	.h1,.h2,.h3,.h4,.h5,.h6 { 
+		margin:0;
+		padding:0;
+	}
+	
+	h1, .h1 { 
+		font-size:segment(18);
+		line-height:rhythm(3);
+		text-indent:-2px;
+	}
+
+	h2, .h2 { 
+		font-size:segment(16);
+		line-height:rhythm(3);
+		text-indent:-1px;
+	}
+	
+	h3, .h3 { 
+		font-size:segment(14);
+		line-height:rhythm(3);
+		text-indent:0px;
+	}
+	h4, .h4 { 
+		font-size:segment(12);
+		line-height:rhythm(2);
+		text-indent:1px;
+		letter-spacing:0;
+	}
+	h5, .h5 { 
+		font-size:segment(10);
+		line-height:rhythm(2);
+		text-indent:1px;
+		letter-spacing:0;
+	}
+
+	h6, .h6 { 
+		font-size:segment(8);
+		line-height:rhythm(2);
+		text-indent:1px;
+		letter-spacing:0;
+	}
+}
+
+
+/* Paragraphs */
+
+p { 
+	hyphenate: auto;
+	hyphenate-lines: 3;
+	font-size:segment(5);
+	line-height:rhythm(1);
+	letter-spacing:-0.020em;
+	margin:0 0 rhythm(1) 0;
+	word-spacing: 0.025em;
+	word-wrap:normal;
+	
+	a {
+	    margin: -.5em;
+	    padding: .5em;
+	    position: relative;
+	}
+	
+	code {
+		font-size:75%;
+		line-height:rhythm(1);
+	  	height:rhythm(1);
+		margin:rhythm(-0.5) 0;
+		position:relative;
+		top:-1px;
+	}
+	
+	&.tiny {
+		font-size:segment(2);
+		line-height:rhythm(1);
+	}
+	
+	
+	&.small {
+		font-size:segment(3);
+		line-height:rhythm(1);
+	}
+	
+	&.large {
+		color: #666;
+		font-weight:weight(light);
+		font-size:segment(5);
+		line-height:rhythm(1);
+	    margin:0 auto rhythm(2);
+		max-width:rhythm(40);
+		padding:0;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		@include prefix('box-sizing',border-box);
+		
+		strong {
+			font-weight:600;
+			color:colors(black);
+		}
+	}
+	
+	&.tight {
+		line-height:rhythm(0.5);
+		margin:0;
+		
+		strong {
+			line-height:rhythm(0.5);
+		}
+	}
+	
+	/* Font Weight Shortcuts */
+	&.thin { font-weight:weight(thin); }
+	&.light { font-weight:weight(light); }
+	&.regular { font-weight:weight(regular); }
+	&.semibold { font-weight:weight(semibold); }
+	&.bold { font-weight:weight(bold); }
+	&.black { font-weight:weight(black); }
+	&.extrabold { font-weight:weight(extrabold); }
+	
+	&:empty { display: none; }
+	&.no-margin,
+	&.no-margin img { margin: 0; }
+	
+	&.short:empty {
+		display:block;
+		
+		&:before { 
+			content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus justo sit amet purus bibendum, a tincidunt magna ullamcorper.";
+			display:block;
+		}	
+	}
+	
+	&.medium:empty {
+		display:block;
+		
+		&:before { 
+			content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus justo sit amet purus bibendum, a tincidunt magna ullamcorper. Aliquam erat volutpat. Donec id varius tortor, eu semper enim. Nulla dictum et turpis a congue. Vivamus vel justo eget ex tincidunt efficitur non quis tellus.";
+			display:block;
+		}	
+	}
+	
+	&.long:empty {
+		display:block;
+		
+		&:before { 
+			content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus justo sit amet purus bibendum, a tincidunt magna ullamcorper. Aliquam erat volutpat. Donec id varius tortor, eu semper enim. Nulla dictum et turpis a congue. Vivamus vel justo eget ex tincidunt efficitur non quis tellus. Mauris ornare bibendum ex, at maximus diam porttitor quis. Nam fermentum massa in imperdiet vestibulum. Curabitur mattis lectus efficitur dignissim tempor.";
+			display:block;
+		}	
+	}
+}
+
+.invert {
+	
+	p { 
+		&.large {
+			color:gray(3);
+		}
+	}
+}
+
+/*  Emphasis Classes
+/*----------------------------------------------------*/
+
+small {
+	@include inline-block;
+	font-size:segment(3);
+	line-height:rhythm(1);
+	font-weight:weight(regular);
+	margin-bottom: segment(-0.5);
+	@include prefix("font-smoothing",subpixel-antialiased);
+}
+
+b, strong, dt, legend { 
+	@include inline-block;
+	font-weight:weight(bold);
+	line-height:rhythm(1);
+}
+
+caption, th, thead {
+	font-weight:weight(bold);
+	line-height:rhythm(1);	
+}
+
+strong {
+	@include inline-block;
+	line-height:rhythm(1);
+}
+
+cite, dfn, em, i { 
+	font-style:italic;
+}
+
+code, pre { 
+  	border: none;
+  	font-family: Menlo, Consolas, "Courier New", monospace;
+	font-size:12px;
+	line-height:rhythm(1);
+	oveflow:hidden;
+	padding:0 rhythm(0.25);
+}
+
+
+del { 
+	text-decoration:line-through;
+}
+
+ins	{ 
+	color: #f00;
+}
+
+sup, sub { 
+	font-size:80%; 
+	line-height:0;
+}
+
+sup { 
+	vertical-align:super;
+}
+sub {
+	vertical-align:sub; 
+}
+
+acronym[title], dfn[title] { 
+	border-bottom:dotted 1px #ccc; 
+	cursor:pointer;
+}
+
+code {
+	background:gray(1);	
+  	color: colors(error);
+	display:inline-block;
+}
+
+mark {
+	color:#000;
+	background:#ffffdd;
+	display:inline-block;
+	padding:0 rhythm(0.25);	
+	font-size:16px;
+	line-height:rhythm(1);
+}
+
+blockquote {
+  	border-left: solid 2px gray(5);
+	font-size:segment(5);
+	line-height:rhythm(1);
+	margin:0 0 rhythm(1) 0;
+	padding:rhythm(0.5) 0 rhythm(0.5) rhythmBorder(1,2);
+  	position: relative;
+
+	p {
+	  	margin: auto;
+	  	font-weight: inherit;
+	  	font-size: inherit;
+	  	line-height: inherit;
+	}
+	
+	small { 
+		color:gray(3);
+		display:block; 
+		margin:rhythm(0);
+		
+		&:before {
+			content: '\2014 \00A0';
+		}
+	}
+	
+	cite { color:colors(error); }
+}
+
+/* Lists */
+ul,
+ol {
+  	padding:0 0 0 rhythm(1);
+	margin:0;
+	
+	ul, ol {
+		margin-bottom: 0;
+	}
+	
+	li {
+		line-height:rhythm(1);
+	}
+	
+	&.unstyled {
+	  	margin-left: 0;
+	  	list-style: none;
+	}
+	
+	&.inline {
+	  	margin-left: 0;
+	  	list-style: none;
+		
+		li {
+			border-right:solid 1px gray(3);
+		 	@include inline-block;
+			margin:0 rhythm(0.5) 0 0;
+			padding:0 rhythm(0.5) 0 0;
+		  	*zoom: 1;
+		
+			&:last-child {
+				border-right:none;
+			}
+		}
+	}
+}
+
+/* Descriptions */
+dl {
+	margin:rhythm(1) 0;
+	padding:0;
+	
+	dt,
+	dd {
+		font-size:segment(3);
+		line-height:rhythm(1);
+	}
+	
+	dt {
+		display:block;
+	}
+	
+	dd {
+		margin:0 0 rhythm(1) 0; 
+	}
+	
+	&.horizontal {
+		dt {
+			clear:left;
+			float:left;
+			margin:0;
+			padding-right:rhythm(1);
+			width:35%;
+		}
+		
+		dd {
+			margin:0;
+			overflow:hidden;
+			padding-bottom:rhythm(1);
+		}
+		
+		&.lined {
+			
+			dt, dd {
+				padding-bottom:rhythm(1);
+				padding-top:rhythm(1);
+				margin-bottom:-1px;
+				border-top:solid 1px gray(2);
+			}
+			
+			dt {
+				position: relative;
+			  	top: 1px;
+				
+				&:nth-child(1){
+					padding-right:rhythm(1);
+				}
+			}
+			
+			dd {
+				&:nth-child(2){
+					border-top:none;
+					padding-top:0;
+				}
+			}
+		}
+	}
+	
+	&.lined {
+		
+		dt {
+			border-top:solid 1px gray(2);
+			padding-top:rhythm(1);
+			margin-top:-1px;
+			
+			&:first-child {
+				border:none;
+				padding:0;
+			}
+		}
+		dd {
+			margin-bottom:rhythm(1);
+		}
+	}
+	
+	&.dotted {
+		display:table;
+		margin:0;
+		width:100%;
+		
+		dt {
+			clear:left;
+			display: table-cell;
+			float:none;
+			overflow:hidden;
+			vertical-align:top;
+			width:100%;
+		  	max-width: 0;
+			
+			&:after {
+				color:gray(2);
+				content: "..................................................................................................................................................................................................................";
+				display:inline-block;
+				font-weight:weight(regular);
+				line-height:rhythmBorder(1,1);
+				width:0;
+				white-space: nowrap;
+			}
+		}
+		
+		dd {
+		  	display: table-cell;
+		  	margin: 0;
+		  	padding-left: 4px;
+		  	vertical-align: bottom;
+		  	white-space: nowrap;
+		}
+	}
+}
+
+/* Icons */
+
+.icons {
+	display:inline-block;
+	font-family:"Entypo";
+	font-size:segment(6);
+	left:1px;
+	line-height:rhythm(1);
+	height:rhythm(1);
+	margin:0 0 -6px 0;
+	overflow:hidden;
+	position:relative;
+	text-align:center;
+	text-indent:-1px;
+	top:0;
+  	vertical-align: baseline;
+	width:rhythm(1);
+	
+	&.social {
+		font-family:"EntypoSocial";
+	}
+	
+	&.line {
+		font-family:"EtLine";
+	}
+	
+	&.x1 {
+		line-height:rhythm(1);
+		height:rhythmBorder(1,2);
+		top:-2px;
+	}
+	
+	&.x1_5 {
+		font-size:segment(7);
+		line-height:rhythm(1.5);
+		height:rhythmBorder(1.5,2);
+		top:-2px;
+	}
+	
+	&.x2 {
+		font-size:segment(9);
+		line-height:rhythm(1);
+		height:rhythm(1);
+		width:rhythm(2);
+		text-indent:-1px;
+		top:-2px;
+	}
+	
+	&.x3 {
+		font-size:segment(12);
+		line-height:rhythm(2);
+		height:rhythm(2);
+		width:rhythm(3);
+		text-indent:-1px;
+		top:-2px;
+		
+		&.square {
+			line-height:rhythm(3);
+			height:rhythm(3);
+			top:-4px;
+		}
+	}
+	
+	&.x4 {
+		font-size:segment(16);
+		line-height:rhythm(2);
+		height:rhythm(2);
+		width:rhythm(4);
+		text-indent:-1px;
+		top:-2px;
+		
+		&.square {
+			line-height:rhythm(4);
+			height:rhythm(4);
+			top:-6px;
+		}
+	}
+	
+	&.x5 {
+		font-size:segment(20);
+		line-height:rhythm(3);
+		height:rhythm(3);
+		width:rhythm(5);
+		text-indent:-1px;
+		margin-bottom:-9px;
+		
+		&.square {
+			line-height:rhythm(5);
+			height:rhythm(5);
+			top:0;
+		}
+	}
+	
+	&.left {
+		margin-right:segment(2);
+		margin-left:segment(-1);
+	}
+	
+	&.right {
+		margin-left:segment(2);
+		margin-right:segment(-1);
+	}
+	
+	&.center {
+		margin-left:segment(-1);
+		margin-right:segment(-1);
+	}
+}
+
+.invert {
+	.icons {
+		color:colors(white);
+	}
+}

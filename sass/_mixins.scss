@@ -1,0 +1,60 @@
+@import 'base';
+
+@mixin breakpoint($point) {
+  	@if $point == mobile {
+    	@media only screen and (min-width: 0px) and (max-width: 700px) { @content; }
+  	}
+	@else if $point == tablet {
+		@media only screen and (min-width: 601px) and (max-width: 1024px) { @content; }
+	}
+	@else if $point == portrait {
+		@media only screen and (min-width: 623px) and (max-width: 770px) { @content; }
+	}
+	@else if $point == landscape {
+		@media only screen and (min-width: 771px) and (max-width: 1024px) { @content; }
+	}
+	@else if $point == retina {
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { @content; }
+	}
+}
+
+/* Cross Browser Inline-Block */
+@mixin inline-block {
+  	display: inline-block; /* For normal, healthy browsers */
+ 
+  	* html & { /* for IE6 */
+    	display: inline;
+  	}
+ 
+  	*+html & { /* for IE7 */
+    	display: inline;
+  	}
+}
+
+@mixin prefix($property, $value) {
+  @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+    #{$vendor}#{$property}: #{$value};
+  }
+}
+
+@mixin gradient($bg, $angle, $color-stops...) {
+	background: $bg;
+	@each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-') {
+    	background: #{$vendor}linear-gradient($angle, $color-stops);
+  	}
+}
+
+/* Font Face */
+@mixin font-face($file, $family, $weight, $style) {
+    $filepath: "../fonts/" + $file;
+    @font-face {
+        font-family: "#{$family}";
+	    font-weight: $weight;
+	    font-style: $style;
+        src: url($filepath + ".eot");
+        src: url($filepath + ".eot?#iefix") format('embedded-opentype'), 
+			 url($filepath + ".woff") format('woff'), 
+			 url($filepath + ".ttf")  format('truetype'), 
+			 url($filepath + ".svg#" + $family + "") format('svg');
+    }
+}

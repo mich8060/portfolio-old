@@ -1,0 +1,87 @@
+@function settings($key) {
+	@if not map-has-key($settings, $key) {
+    	@warn "Key `#{$key}` not found in $settings map.";
+  	}	
+  	@return map-get($settings, $key);
+}
+
+@function segment($key){
+	@return ($key * settings(segment)) + settings(unit)
+}
+
+@function segmentBorder($key, $border){
+	@return (($key * settings(segment)) - $border) + settings(unit)
+}
+
+@function rhythm($key){
+	@return ($key * settings(rhythm)) + settings(unit)
+}
+
+@function rhythmBorder($key, $border) {
+	@return (($key * settings(rhythm)) - $border) + settings(unit)
+}
+
+@function tint($color, $percentage) {
+  	@return mix($color, white, $percentage);
+}
+
+@function shade($color, $percentage) {
+  	@return mix($color, black, $percentage);
+}
+
+@function hexrgb($color) { 
+	$red: red($color); 
+	$green: green($color);
+	$blue: blue($color);
+	$rgb: 'rgb(#{$red,$green,$blue})';
+  	@return $rgb;
+}
+
+@function fonts($key) {
+	@if not map-has-key($fonts, $key) {
+    	@warn "Key `#{$key}` not found in $fonts map.";
+  	}	
+  	@return map-get($fonts, $key);
+}
+
+@function colors($key) {
+	@if not map-has-key($colors, $key) {
+    	@warn "Key `#{$key}` not found in $colors map.";
+  	}	
+  	@return map-get($colors, $key);
+}
+
+@function light($key) {
+	@if not map-has-key($light, $key) {
+    	@warn "Key `#{$key}` not found in $light map.";
+  	}	
+  	@return map-get($light, $key);
+}
+
+@function gray($key) {
+	@if not map-has-key($gray, $key) {
+    	@warn "Key `#{$key}` not found in $gray map.";
+  	}	
+  	@return map-get($gray, $key);
+}
+
+@function dark($key) {
+	@if not map-has-key($dark, $key) {
+    	@warn "Key `#{$key}` not found in $dark map.";
+  	}	
+  	@return map-get($dark, $key);
+}
+
+@function featured($key) {
+	@if not map-has-key($featured, $key) {
+    	@warn "Key `#{$key}` not found in $featured map.";
+  	}	
+  	@return map-get($featured, $key);
+}
+
+@function weight($key) {
+	@if not map-has-key($weight, $key) {
+    	@warn "Key `#{$key}` not found in $weight map.";
+  	}	
+  	@return map-get($weight, $key);
+}

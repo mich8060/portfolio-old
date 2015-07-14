@@ -1,0 +1,108 @@
+/* Prettify Component */
+/* line 5, ../../sass/libraries/prettify.scss */
+.com {
+  color: #93a1a1;
+}
+
+/* line 6, ../../sass/libraries/prettify.scss */
+.lit {
+  color: #195f91;
+}
+
+/* line 7, ../../sass/libraries/prettify.scss */
+.pun, .opn, .clo {
+  color: #93a1a1;
+}
+
+/* line 8, ../../sass/libraries/prettify.scss */
+.fun {
+  color: #dc322f;
+}
+
+/* line 9, ../../sass/libraries/prettify.scss */
+.str, .atv {
+  color: #dd3f19;
+}
+
+/* line 10, ../../sass/libraries/prettify.scss */
+.kwd, .prettyprint .tag {
+  color: #3a77c1;
+}
+
+/* line 11, ../../sass/libraries/prettify.scss */
+.typ, .atn, .dec, .var {
+  color: #44a22d;
+}
+
+/* line 12, ../../sass/libraries/prettify.scss */
+.pln {
+  color: #48484c;
+}
+
+/* line 14, ../../sass/libraries/prettify.scss */
+ol.linenums {
+  margin: 0 0 0 33px;
+  /* IE indents via margin-left */
+}
+
+/* line 17, ../../sass/libraries/prettify.scss */
+ol.linenums li {
+  padding-left: 12px;
+  color: #bebec5;
+  line-height: 20px;
+  text-shadow: none;
+}
+
+/* line 25, ../../sass/libraries/prettify.scss */
+.invert .pln {
+  color: #e682a9;
+}
+/* line 26, ../../sass/libraries/prettify.scss */
+.invert .str {
+  color: pink;
+}
+/* line 27, ../../sass/libraries/prettify.scss */
+.invert .kwd {
+  color: #88cbf0;
+}
+/* line 28, ../../sass/libraries/prettify.scss */
+.invert .com {
+  color: #dbc673;
+}
+/* line 29, ../../sass/libraries/prettify.scss */
+.invert .typ {
+  color: pink;
+}
+/* line 30, ../../sass/libraries/prettify.scss */
+.invert .lit {
+  color: #88cbf0;
+}
+/* line 31, ../../sass/libraries/prettify.scss */
+.invert .pun, .invert .opn, .invert .clo {
+  color: #7e8998;
+}
+/* line 32, ../../sass/libraries/prettify.scss */
+.invert .tag {
+  color: pink;
+}
+/* line 33, ../../sass/libraries/prettify.scss */
+.invert .atn {
+  color: #8ba771;
+}
+/* line 34, ../../sass/libraries/prettify.scss */
+.invert .atv {
+  color: #88cbf0;
+}
+/* line 35, ../../sass/libraries/prettify.scss */
+.invert .dec, .invert .var {
+  color: orange;
+}
+/* line 36, ../../sass/libraries/prettify.scss */
+.invert .fun {
+  color: red;
+}
+/* line 38, ../../sass/libraries/prettify.scss */
+.invert ol.linenums {
+  margin: 0;
+  padding: 8px 5px 8px 60px;
+}
